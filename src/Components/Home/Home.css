@@ -1,0 +1,11 @@
+.slick-prev, .slick-next {
+    color: #F57C00 !important;
+    background-color: #F57C00 !important;
+    border-radius: 50%;
+}
+
+@media (max-width: 1280px) {
+    .slick-prev, .slick-next {
+       display: none !important;
+    }
+}
