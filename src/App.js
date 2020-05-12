@@ -11,6 +11,8 @@ import Packages from './Components/Packages/Packages';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Blogs from './Components/Blogs/Blogs';
+import Footer from './Components/Footer/Footer';
+import MainAdmin from './Components/Admin/MainAdmin';
 
 class App extends React.Component {
   render() {
@@ -25,7 +27,9 @@ class App extends React.Component {
             <Route path="/blogs" component={Blogs} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/admin" component={MainAdmin} />
           </Switch>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     );

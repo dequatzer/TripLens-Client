@@ -12,12 +12,13 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: "transparent",
         color: "white",
-        padding: 0
+        padding: 0,
+        margin: "0 auto",
+        width: "80%"
     },
     container: {
         margin: "100px auto",
-        // paddingLeft: "50px",
-        // border: "1px solid red",
+        textAlign: "right",
         maxWidth: "1280px",
         [theme.breakpoints.down("md")]: {
             margin: "10px auto",
@@ -47,19 +48,19 @@ const useStyles = makeStyles((theme) => ({
         padding: "0",
         marginRight: "20px",
         [theme.breakpoints.down('xs')]: {
-            fontSize: "1rem",
+            fontSize: "2rem",
             padding: "0px",
             margin: "0px"
         },
         [theme.breakpoints.down('md')]: {
-            fontSize: "2.2rem",
+            fontSize: "2rem",
             padding: "0px",
             margin: "0px 5px"
         }
     },
 
     h2: {
-        fontSize: "2rem",
+        fontSize: "1.3rem",
         textAlign: "left",
         [theme.breakpoints.down('xs')]: {
             fontSize: "0.9rem"
@@ -76,16 +77,17 @@ const WhyUs = () => {
         <Paper className={classes.root} elevation={0}>
 
             <Grid container className={classes.container}>
-                <Grid item xs={12} md={6} className={classes.item}>
-                    <AttachMoneyIcon className={classes.iconStyles} color="secondary" />
-                    <Typography variant="h2" className={classes.h2}>
-                        Best price in the market
-                    </Typography>
-                </Grid>
+
                 <Grid item xs={12} md={6} className={classes.item}>
                     <PanToolIcon className={classes.iconStyles} color="secondary" />
                     <Typography variant="h2" className={classes.h2}>
                         Leading Travel Agency in Jharkhand
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={6} className={classes.item}>
+                    <AttachMoneyIcon className={classes.iconStyles} color="secondary" />
+                    <Typography variant="h2" className={classes.h2}>
+                        Best price in the market
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6} className={classes.item}>

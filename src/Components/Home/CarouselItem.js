@@ -6,12 +6,15 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles((theme) => ({
     paperStyle: {
         height: "70vh",
-        background: props => props.item.imageUrl,
+        background: props => props.item.image_url,
         ...theme.typography.alexBrushFonts,
         color: "#fff",
         fontFamily: "Bad Script",
         textAlign: "center",
-        paddingTop: "10%"
+        paddingTop: "10%",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "1.2em"
+        }
     }
 }))
 
@@ -21,8 +24,8 @@ function CarouselItem(props) {
     return (
         <div>
             <Paper square elevation={1} className={classes.paperStyle} >
-                <h2>{props.item.name}</h2>
-                <p>{props.item.description}</p>
+                <h2>{props.item.title}</h2>
+                <p>{props.item.sub_title}</p>
             </Paper>
         </div>
 

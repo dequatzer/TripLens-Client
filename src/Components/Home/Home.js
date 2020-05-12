@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import CarouselItem from './CarouselItem';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Container, Typography, useTheme, useMediaQuery } from '@material-ui/core';
 import PopularDestinations from './PopularDestinations';
 import TrendingPackages from './TrendingPackages';
-
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 import CustomerReview from './CustomerReview';
 import WhyUs from './WhyUs';
+import api from '../../Utilities/api';
 
 const Home = () => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down("md"));
+
     const useStyles = makeStyles((theme) => ({
         containerStyleDestinations: {
             backgroundColor: "#eee",
@@ -104,21 +105,13 @@ const Home = () => {
     }
 
 
+    let [homeCarouselDtls, setHomeCarouselDtls] = useState([]);
 
-
-
-    let items = [
-        {
-            name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!",
-            imageUrl: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/carousel/img-1.jpg') center/cover no-repeat"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            imageUrl: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('/images/carousel/img-2.jpg') center/cover no-repeat"
-        }
-    ]
+    useEffect(() => {
+        api.fnGetHomeCarouselDtls().then(res => {
+            setHomeCarouselDtls(res.data);
+        })
+    }, []);
 
     let popularDestinations = [
         {
@@ -232,7 +225,7 @@ const Home = () => {
             <Container disableGutters maxWidth="xl">
                 <Carousel interval="4000" indicators={false}>
                     {
-                        items.map((item, index) => {
+                        homeCarouselDtls.map((item, index) => {
                             return (<CarouselItem key={index} item={item} />)
                         })
                     }

@@ -106,7 +106,8 @@ export default function Navigation(props) {
         { name: "Packages", link: "/packages", activeIndex: 2 },
         { name: "Blogs", link: "/blogs", activeIndex: 3 },
         { name: "About", link: "/about", activeIndex: 4 },
-        { name: "Contact", link: "/contact", activeIndex: 5 }
+        { name: "Contact", link: "/contact", activeIndex: 5 },
+        { name: "Admin", link: "/admin", activeIndex: 6 }
     ]
 
 
@@ -132,7 +133,7 @@ export default function Navigation(props) {
             {routes.map((item, index) => (
                 < Tab key={index} disableRipple className={classes.tab} label={item.name} component={RouterLink} to={item.link} />
             ))}
-            < Tab className={classes.loginContainer} label="Login" component={RouterLink} to="/login" />
+            < Tab className={classes.loginContainer} label="Login/SignUp" component={RouterLink} to="/login" />
         </Tabs>
     )
 

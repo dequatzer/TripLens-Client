@@ -2,18 +2,23 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const darkPrimaryColor = "#F57C00";
 const PrimaryColor = "#FF9800";
-//const lightPrimaryColor = "#FFE0B2";
+const lightPrimaryColor = "#FFE0B2";
 
 const textPrimaryColor = "#212121";
-// const accentColor = "#FF9800";
-// const primaryTextColor = "#212121";
-//const secondaryTextColor = "#757575";
+const accentColor = "#FF9800";
+const primaryTextColor = "#212121";
+const secondaryTextColor = "#757575";
 // const dividerColor = "#BDBDBD";
 
 export default createMuiTheme({
     palette: {
         common: {
-            darkOrange: `${darkPrimaryColor}`
+            darkOrange: `${darkPrimaryColor}`,
+            darkBackGround: `${textPrimaryColor}`,
+            secondaryTextColor: `${secondaryTextColor}`,
+            accentColor: `${accentColor}`,
+            primaryColor: `${primaryTextColor}`,
+            lightPrimaryColor: `${lightPrimaryColor}`
         },
         primary: {
             //main: `${darkPrimaryColor}`
@@ -31,7 +36,6 @@ export default createMuiTheme({
             //fontFamily: "Abel",
             //fontFamily: "Lobster",
             //fontFamily: 'Bad Script',
-            fontFamily: 'Josefin Sans',
             //fontFamily: 'Londrina Shadow',
             //fontFamily: "Emilys Candy",
             //fontFamily: "Jua",
@@ -40,10 +44,10 @@ export default createMuiTheme({
             //fontFamily: "Bangers",
             // fontFamily: "Bebas Neue",
             //fontFamily: "Rammetto One",
+            //fontSize: "1rem",
             textTransform: "none",
+            fontFamily: 'Josefin Sans',
             fontWeight: 700,
-            // fontSize: "1rem",
-
             color: `${textPrimaryColor}`
         },
         h1: {
